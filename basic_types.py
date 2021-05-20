@@ -1,4 +1,13 @@
 def bool_ex(): #bool 자료형
+    """
+    boolean 자료형 연습
+    isinstance()
+    esp., circuit break
+    or : 순서 상 먼저 나온 True 값을 반환
+    and:
+    1) True1&True2: 순서 상 나중에 나온 True2값을 반환
+    2) True&False: False 값을 반환
+    """
     print ("======bool 연습")
     #참(true), 거짓(false)
     # 내부적으로 거짓은 0, 나머지는 모두 참으로 판단
@@ -36,6 +45,14 @@ def bool_ex(): #bool 자료형
 
 
 def integer_ex():  #정수형
+    """
+    정수형 연습 (integer)
+    in Python: only int (cf. in Java: int, long)
+    2진:0b (b for binary); bin()
+    8진:0o (o for oct); oct()
+    16진:0x (x for hex); hex()
+
+    """
     print("==========정수형 연습")
     a=23 #Literal
     b=int(23) #타입 함수를 이용
@@ -59,8 +76,12 @@ def integer_ex():  #정수형
     print(oct(2021))
     print(hex(2021))
 
-def float_ex():
-    #실수형은 모두 float로 표기
+def float_ex(): #실수형은 모두 float로 표기
+    """
+    실수형 연습 (float)
+    in Python: only float (cf. in Java: float, double)
+    e or E -> expressing float
+    """
     print("==========실수형 연습")
     a=3.14159 #리터럴로 선언
     print(a,"is", type(a))
@@ -76,6 +97,12 @@ def float_ex():
     print(-2E-5==-0.00002)
 
 def complex_ex():
+    """
+    복소수 연습 (Complex Number:i)
+    in Python: can express Complex Number (cf. in Java: x)
+    j or J -> expressing complex
+    .real, .imag, .conjugate
+    """
     #복소수
     print("=====복소수 연습")
     # 복소수: 실수부 + 허수부J 형태
@@ -98,6 +125,10 @@ def complex_ex():
     print(e, "is", type(e))
 
 def builtin_math_function(): #내장 수치 함수
+    """
+    내장 수치 함수(builtin mathematical function)
+    함수를 통해서 숫자를 출력할 수 있음 
+    """
     print(abs(-1)) #절댓값
     print(int(3.14159)) #타입 함수를 이용한 타입의 변환
     print(float(3)) #타입변환

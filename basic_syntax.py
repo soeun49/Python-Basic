@@ -1,5 +1,8 @@
 # 연산자 연습
 def arith_oper(): #산술 연산자 연습
+    """
+    기본 산술 연산자 (Basic Arithmetics Operator)
+    """
     print ("===============산술연산")
     #+,-,* /
     print (7/3) #정수와 정수를 나눠도 실수 형태로 표현
@@ -19,6 +22,9 @@ def arith_oper(): #산술 연산자 연습
     print(pow(7,3)) # 내장 수치 제곱 함수
 
 def complex_ex():
+    """
+    복소수(Complex Number)
+    """
     print ("===============복소수")
     print (3+4j) #실수부 +허수부 + j
     print ((3+4j).real) #실수부 반환
@@ -29,6 +35,9 @@ def complex_ex():
 
 
 def rel_oper(): # 비교 연산자 연습
+    """
+    비교 연산자 (Comparison Operator)
+    """
     print("===============비교 연산(관계 연산)")
     print ("1>3 ?", 1 >3)
     print ("1<3 ?", 1<3)
@@ -66,6 +75,9 @@ def rel_oper(): # 비교 연산자 연습
 
 
 def variable_ex(): #변수
+    """
+    변수 지정 (Defining Variables)
+    """
     print("=======변수")
     #변수 명은 문자, 숫자, _의 조합
     #숫자로 시작하면 안됨
@@ -79,6 +91,9 @@ def variable_ex(): #변수
     print (가격 + 가격*0.1)
 
 def assignment_ex(): #치환문
+    """
+    치환 (Substitution/Replacement)
+    """
     print("======치환문")
 
     #여러 변수를 한꺼번에 할당
@@ -94,7 +109,7 @@ def assignment_ex(): #치환문
     x=y=z=2021
     print(x,y,z)
 
-    # 중요: 동적 타이핑
+    # 중요: 동적 타이핑 (dynamic: 값의 할당시, 데이터 타입에 제한이 없음)
     # 파이썬은 변수 선언이 없음, 그리고 값이 할당될 때 데이터 타입이 결정
     a=1
     print (a, "is", type(a)) # type함수 -> 데이터 혹은 객체의 데이터 타입을 확인
@@ -106,6 +121,10 @@ def assignment_ex(): #치환문
 
 
 def logical_oper(): # 논리 연산자
+    """
+    논리 연산자 (Logical Operator)
+    논리곱 (and), 논리합(or), 논리부정(not)
+    """
     print (("=====논리연산 "))
 
     #논리곱 (and): 둘 다 true일때 true
@@ -118,6 +137,11 @@ def logical_oper(): # 논리 연산자
     print(a==b or a!=b) #a==b의 논리값과 a!=b의 논리값의 논리합
 
 def bit_oper(): #비트 연산자: int 데이터를 비트 단위로 정밀하게 제어
+    """
+    비트 연산자 (Bit Operator)
+    bin() -> 10진수 숫자를 2진수 숫자로 변경 (decimal to binary)
+
+    """
     print("=====비트 연산자")
     #비트 NOT : 1>>>>>>0
     print (bin(5),bin(~5))  #~: bit not 이진수 보수 표기법
