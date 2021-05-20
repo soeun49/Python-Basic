@@ -140,4 +140,4 @@ if __name__=="__main__":  #main logic 수행
 #    variable_ex()
 #    assignment_ex()
 #    logical_oper()
-    bit_oper();
+    bit_oper()
