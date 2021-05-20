@@ -15,4 +15,5 @@ if __name__ == '__main__':
 
 
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# 주석을 만들때에는 ctyl+/ - 한줄 주석
+# or """~"""/'''~'''로 만들기 -여러줄 주석 

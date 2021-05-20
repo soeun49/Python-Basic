@@ -106,7 +106,7 @@ def search_methods():
 
     print("1st index:", s.index("Like")) #문자열 내의 Like 인덱스
     print("2nd index:", s.index("Like",6)) #6번 인덱스 이후의 Like 인덱스
-   # print("3rd index:", s.index("Like",21)) #substring not found --> ValueError (!): 없는 검색 결과는 ERROR
+    #print("3rd index:", s.index("Like",21)) #substring not found --> ValueError (!): 없는 검색 결과는 ERROR
     #에러 발생시키는 메서드 사용시에는 미리 체크 (방어 코딩)
 
     if "Like" in s[21:]:print ("3rd Index", s.index("Like",21))
@@ -115,6 +115,10 @@ def search_methods():
     print("RFIND:", s.rfind("Like"))
     print("2nd RFIND:", s.rfind("Like",0,17)) #0~17경계 사이에서 Like 역방향 검색
     #rindex는 검색 결과가 없을때 ValueError발생; 그 외에는 rfind사용방법과 동일
+    print("RINDEX:",s.rindex("Like"))
+    print("2nd RINDEX:",s.rindex("Like",0,17))
+
+    #Index 메서드를 사용할때에는 미리 in 메서드로 확인을 하고 사용하자(!)
 
     #특정 문자열로 시작 or 끝나는가?
     url= "http://www.naver.com"
@@ -203,7 +207,7 @@ def align_methods():
     print("ZFILL:", "1234".zfill(5)) #5자리 확보+ 빈자리는 0으로 채움 result:01234
     print("ZFILL:", "1234567890".zfill(5)) #확보한 자릿수는 최소 공간 -> 자릿수가 넘어가도 내용은 잘리지 않음
 
-    
+
 
 if __name__ == "__main__":
 #    define_str()
@@ -213,4 +217,4 @@ if __name__ == "__main__":
 #    modify_replace_methods()
 #    split_join_method()
 #    check_methods()
-    align_methods()
+     align_methods()
