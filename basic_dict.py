@@ -147,6 +147,6 @@ def loop():
 
 if __name__=="__main__":
     # define_dict()
-    # dict_methods()
+    dict_methods()
     # using_dict()
-    loop()
+    # loop()
