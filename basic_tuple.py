@@ -44,8 +44,39 @@ def tuple_methods ():
     #갯수 확인
     print("COUNT of 20:", tp.count(20))
 
+def packing_unpacking():
+    """
+    튜플의 패킹 &언패킹
+    """
+    tp=(10,20,30,"Python")
+    print(tp,type(tp))
+    tp1 = 10, 20, 30, "Python" #()로 명시하지 않아도 튜프롤 인식
+    print(tp1,type(tp1))
+
+    #기본 Unpacking
+    (a,b,c,d)=tp
+    print(a,b,c,d)
+    #일반적으로
+    a,b,c,d=tp
+    print(a,b,c,d)
+
+    # a,b,c=tp ->변수의 갯수가 맞지 않으면 ValueError(!)
+    # a,b,c,d,e=tp -> ValueError(!)
+
+    #확장 언패킹
+    #지정되지 않은 개수의 요소 변수 앞에 *
+    a,*b =tp
+    print(a,b)
+
+    *a,b=tp
+    print(a,b)
+
+    a,*b,c = tp
+    print(a,b,c)
+
 
 if __name__ =="__main__":
     # define_tuple()
     # tuple_oper()
-    tuple_methods()
+    # tuple_methods()
+    packing_unpacking()
