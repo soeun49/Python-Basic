@@ -186,9 +186,22 @@ def queue_ex():
     print(queue.pop(0))
     print(queue.pop(0))
 
+def loop():
+    """
+    리스트 순회
+    """
+    words= "Life is too short, you need Python".replace(",","").upper().split()
+    print("List:", words)
+
+    #순차 자료형은 for~in 문으로 차례대로 요소를 전달받을 수 있다. (별도 인덱스 변수는 없다)
+    for word in words:
+        print("WORD:", word)
+
+
 if __name__ == "__main__":
     # define_list()
     # list_oper()
     # list_methods()
     # stack_ex()
-    queue_ex()
+    # queue_ex()
+    loop()
