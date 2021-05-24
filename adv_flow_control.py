@@ -74,14 +74,27 @@ def for_ex():
         print()
 
     #연습문제1.: 2단부터 9단까지 구구표 출력하기
+    num=int(input("단을 입력하세요:"))
+    total=0
+    for i in range (1,10):
+        total=i*num
+        print(total)
+    else:
+        print()
     #연습문제2: 삼각형 그리기
 
 def while_ex():
     """
     while 문 연습
     """
-    #while문 버전으로 
+    #while문 버전으로
     #연습문제1.: 2단부터 9단까지 구구표 출력하기
+    num = int(input("단을 입력하세요:"))
+
+    while (i in range (1,10)):
+        i=0
+        total=i*num
+        print(total)
     #연습문제2: 삼각형 그리기
 
 
@@ -94,3 +107,4 @@ if __name__=="__main__":
     # if_statement()
     # cond_expr()
     for_ex()
+    # while_ex()
