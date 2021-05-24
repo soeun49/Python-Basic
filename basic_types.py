@@ -127,7 +127,7 @@ def complex_ex():
 def builtin_math_function(): #내장 수치 함수
     """
     내장 수치 함수(builtin mathematical function)
-    함수를 통해서 숫자를 출력할 수 있음 
+    함수를 통해서 숫자를 출력할 수 있음
     """
     print(abs(-1)) #절댓값
     print(int(3.14159)) #타입 함수를 이용한 타입의 변환
