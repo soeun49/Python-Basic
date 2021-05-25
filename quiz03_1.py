@@ -2,24 +2,21 @@ def question1():
 
     while True:
         x = input("수를 입력하세요")
-        total = 0
         a= x.isdigit()
+
         if a is not True:
             print("정수가 아닙니다. 다시입력하세요")
             continue
 
         if a is True:
-            x=int(x)
-            for x in range (0,x+1,3):
-                total+=x
-                print("1부터", x+1, "까지 3의 배수의 합=",total,end="")
-                print()
-        else:
-            print()
-            break
+            to=int(x)
+            total = 0
+            for i in range(0, to+1,3):
+                # if i%3 == 0:
+                    total +=i
 
-    else:
-        print()
+                    print("1부터 {}까지의 3의 배수의 합 = {}".format(to, total))
+        break
 
 
 if __name__ == '__main__':

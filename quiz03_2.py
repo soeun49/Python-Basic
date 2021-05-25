@@ -7,9 +7,8 @@ def question2():
         if isinstance(item,(int,float)):
             lst_cleaned.append(item)
 
-            print("Cleaned List",lst_cleaned)
-    else:
-        print()
+    print("Cleaned List",lst_cleaned)
+
 
 
 

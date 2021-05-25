@@ -10,7 +10,11 @@ def question4():
     counts=dict()
     for word in str1.split():
         counts[word]=counts.get(word,0)+1
-    print(counts.items())
+
+    for key,value in counts.items():
+        print("{}:{}".format(key, value))
+
+
 
 
 

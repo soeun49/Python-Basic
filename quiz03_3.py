@@ -1,25 +1,10 @@
-args=int(input("입력:").split(" "))
+def summary(*args):
+    total=sum(args)
+    return total, max(args), min(args), total/len(args)
 
-def sum(*args):
-    total=0
-    for x in args:
-        total+=x
-    return total
+def q3():
+    total,maxval,minval,avg=summary(80,75,90,95,85)
+    print(total,maxval,minval,avg)
 
-def max(*args):
-    for x in args:
-        return max(x)
-
-def min(*args):
-    for x in args:
-        return min(x)
-
-def avg(*args):
-    total=0
-    for x in args:
-        total+=x
-        avg=total/len(x)
-        return avg
-
-print()
-# print(total,maxval,minval,avg)
+if __name__ == "__main__":
+    q3()
