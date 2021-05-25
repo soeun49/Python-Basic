@@ -63,12 +63,12 @@ def arith_oper_overriding():
 
     # print(dir(object))
     # Point + Point
-    print(p1+p2)
+    print("point+point:",p1+p2)
     #TypeError: unsupported operand
 
     #Point + int
     p1=Point(10,20)
-    print (p1+10)
+    print ("Point+int:",p1+10)
 
     #int + Point
     p1=Point(10,20)
@@ -77,10 +77,10 @@ def arith_oper_overriding():
     #연습문제
     p1=Point(10,20)
     p2=Point(30,40)
-    print(p1-p2)
+    print("point-point",p1-p2)
 
     p1=Point(10,20)
-    print(p1-10)
+    print("point-int",p1-10)
 
     p1= Point(10,20)
     p2= Point(10,20)

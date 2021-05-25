@@ -38,30 +38,35 @@ class Point:
     def __add__(self, other):
         #Point + other
         if isinstance(other,Point): #+Point
-            self.x +=other.x
-            self.y +=other.y
+            # self.x +=other.x ->내부 데이터 변경 방식
+            # self.y +=other.y
+            return Point(self.x+other.x, self.y+other.y)
+            # 내부 데이터가 바뀌지 않음
         elif isinstance(other,int): #+int
-            self.x+= other
-            self.y+= other
+            # self.x+= other
+            # self.y+= other
+            return Point(self.x-other,self.y-other)
 
         return self
 
     #역이행 연산자 오버로딩 +
     def __radd__(self, other): #other +Point
         if isinstance(other, int):
-            self.x +=other
-            self.y +=other
-
+            # self.x +=other -> 내부 데이터 변경 방식
+            # self.y +=other
+            return Point(self.x+other, self.y+other)
         return self
 
     #연산자 오버로딩 -
     def __sub__(self,other):
         if isinstance(other,Point):
-            self.x-=other.x
-            self.y-=other.y
+            # self.x-=other.x -> 내부 데이터 변경 방식
+            # self.y-=other.y
+            return Point(self.x-other.x,self.y-other.y)
         elif isinstance(other,int):
-            self.x-=other
-            self.y-=other
+            # self.x-=other
+            # self.y-=other
+            return Point(self.x-other, self.y-other)
 
         return self
 
