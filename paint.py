@@ -31,7 +31,62 @@ def class_member_test():
           p1.instance_count, #인스턴스에서 접근 가능
           Point.instance_count) #인스턴스 없이도 접근 가능
 
+
+def test_lifecycle():
+    p1=Point(10,20) #생성자 사용
+    print("instance count:", Point.instance_count)
+
+    p2=Point() #기본값 사용
+    print("instance count:",Point.instance_count)
+
+    print(p1,p2)
+
+def test_print():
+    p1=Point(10,10)
+    print("p1:",p1) #__str__호출
+
+    #__str__은 일반 사용자가 보기 쉽게 출력하는 포맷
+    #__repr__은 개발자가 객체를 복원하기 위해 출력하는 포맷
+
+    print(repr(p1)) #__repr__호출
+    p2=eval(repr(p1))
+    print("p2:",p2,type(p2))
+
+
+    #__str__비공식적 문자열 (일반 사용자용)
+    #__repr__공식적 문자열 (개발자용)
+
+
+def arith_oper_overriding():
+    p1=Point(10,20)
+    p2=Point(30,40)
+
+    # print(dir(object))
+    # Point + Point
+    print(p1+p2)
+    #TypeError: unsupported operand
+
+    #Point + int
+    p1=Point(10,20)
+    print (p1+10)
+
+    #int + Point
+    # p1=Point(10,20)
+    # print(10+p1)
+
+    #연습문제
+    p1=Point(10,20)
+    p2=Point(30,40)
+    print(p1-p2)
+
+    p1=Point(10,20)
+    print(p1-10)
+
+
 if __name__=="__main__":
     # bound_class_method()
     # unbound_class_method()
-    class_member_test()
+    # class_member_test()
+    # test_lifecycle()
+    # test_print()
+    arith_oper_overriding()
