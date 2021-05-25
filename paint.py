@@ -71,8 +71,8 @@ def arith_oper_overriding():
     print (p1+10)
 
     #int + Point
-    # p1=Point(10,20)
-    # print(10+p1)
+    p1=Point(10,20)
+    print("int+point:",10+p1)
 
     #연습문제
     p1=Point(10,20)
@@ -81,6 +81,11 @@ def arith_oper_overriding():
 
     p1=Point(10,20)
     print(p1-10)
+
+    p1= Point(10,20)
+    p2= Point(10,20)
+
+    print("p1==p2?", p1==p2) #false로 나옴
 
 
 if __name__=="__main__":
