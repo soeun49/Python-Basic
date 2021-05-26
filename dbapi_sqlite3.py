@@ -59,13 +59,61 @@ def test_insert_data(db_file,name,category, region):
     conn.commit()
     conn.close()
 
+def test_delete_all(db_file):
+    conn = create_connection(db_file)
+    sql= "DELETE FROM customer"
+    res= conn.execute(sql)
+
+    print("{}개의 레코드가 삭제됨.".format(res.rowcount))
+    conn.commit()
+    conn.close()
+
+def test_insert_bulk_data(db_file):
+    #테스트 데이터 여러개 insert
+    test_delete_all(db_file) #비우고
+    test_insert_data(db_file, "둘리", 1, "부천")
+    test_insert_data(db_file, "고길동",2,"부천")
+    test_insert_data(db_file, "김소은",2,"서울")
+    test_insert_data(db_file,"홍길동", 1, "서울")
+    test_insert_data(db_file,"이수민",2,"부산")
+
+def test_select_data(db_file):
+    # conn=create_connection(db_file)
+    with create_connection(db_file) as conn:
+        # select 쿼리 수행
+        sql= "SELECT * FROM customer"
+        cursor=conn.execute(sql)
+
+        print(type(cursor))
+        # 결과 처리
+        print(cursor.fetchone()) #1개 레코드 불러오기
+        print(cursor.fetchmany(2)) #2개 레코드 불러오기
+        print(cursor.fetchall()) #현재 커서 위치에서 나머지 레코드 불러오기
+
+    # conn.close()
+
+def test_search_data(db_file):
+    conn=create_connection(db_file)
+
+    #명명된 placeholder
+    #   placeholder에 :key로 명명
+    #   데이터는 dict로 전달
+    sql="""\
+    SELECT name, category, region FROM customer WHERE region=:region or category=:category
+    """
+    cursor=conn.execute(sql,{"region": "부천", "category": 2})
+
+    for customer in cursor.fetchall(): #전체 데이터를 루프로 돌림
+        print(customer)
+
 
 if __name__ == "__main__":
     db_file= "./database/mysqlite.db"
     # test_connection(db_file)
-    test_create_table(db_file)
-
-
-
+    # test_create_table(db_file)
+    # test_insert_data(db_file,'둘리',2,'부천')
+    # test_insert_bulk_data(db_file)
+    # test_select_data(db_file)
+    test_search_data(db_file)
 
 
