@@ -2,7 +2,6 @@ def question1():
 
     s= "Life is too short, You need Python"
 
-    print(s.lower())
     print(s.lower().replace(" ","").replace(",",""))
     lst=list(s.lower().replace(" ","").replace(",",""))
     print(lst)
@@ -12,6 +11,8 @@ def question1():
     print(lst2,type(lst2))
     lst2=sorted(lst2)
     print(lst2)
+    print(len(lst2), "개의 알파벳이 사용되었습니다")
+
 
 
 

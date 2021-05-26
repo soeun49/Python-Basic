@@ -101,3 +101,14 @@ cleaned= clean_strings(dirty_strings, str.strip, str.title)
 print("CLEANED:", cleaned)
 
 
+#__name__속성
+# import 될 때 -> 자신의 이름
+# 직접 실행될때 -> __main__
+
+print("__name__:", __name__)
+# 직접 실행되어서 __main__으로 나옴
+
+if __name__ == "__main__":
+    print("최상위 모듈로 실행되었습니다.")
+else:
+    print("import된 모듈입니다.")
