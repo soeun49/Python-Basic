@@ -106,6 +106,17 @@ def test_search_data(db_file):
     for customer in cursor.fetchall(): #전체 데이터를 루프로 돌림
         print(customer)
 
+#사용자 정의 클래스 import
+from mysqlite import *
+
+def test_mysqlite_class(db_file):
+    #새 객체 생성
+    mydb= Database(db_file)
+    sql="""SELECT * FROM customer WHERE region=:region"""
+    res=mydb.execute_select(sql,{"region":"서울"})
+
+    for customer in res:
+        print(customer)
 
 if __name__ == "__main__":
     db_file= "./database/mysqlite.db"
@@ -114,6 +125,6 @@ if __name__ == "__main__":
     # test_insert_data(db_file,'둘리',2,'부천')
     # test_insert_bulk_data(db_file)
     # test_select_data(db_file)
-    test_search_data(db_file)
-
+    # test_search_data(db_file)
+    test_mysqlite_class(db_file)
 

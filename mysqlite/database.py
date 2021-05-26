@@ -1,6 +1,5 @@
 import sqlite3
 
-
 class Database:
     #생성자
     def __init__(self,db = None): #none은 기본값
@@ -15,7 +14,7 @@ class Database:
         try:
             self.conn=sqlite3.connect(db)
             self.cursor=self.conn.cursor()
-        except:sqlite3.Error as e:
+        except sqlite3.Error as e:
             print("Database 접속 실패")
 
     #닫기 메서드
@@ -25,5 +24,34 @@ class Database:
             self.cursor.close()
             self.conn.close()
 
+    #__enter__: with와 함꼐 사용했을 때 호출되는 생명주기
+    def __enter__(self):
+        return self
+
+
+    #__exit__: with절이 끝났을때 호출되는 생명주기
+    def __exit__(self,exc_type,exc_val,exc_tb):
+        self.close()
+
+
+    #SELECT 쿼리 수행 메서드
+    def execute_select(self,sql,parameter=None):
+        if parameter is not None: #parameter가 존재하면
+            self.cursor.execute(sql,parameter)
+        else: #parameter가 없으면
+            self.cursor.execute(sql)
+
+        data=list(self.cursor.fetchall())
+        return data
+
+    #Insert, Update, Delete 쿼리 수행 메서드
+    def execute_cud(self,sql,parameter=None):
+        if parameter is not None:
+            self.cursor.execute(sql,parameter)
+        else:
+            self.cursor.execute(sql)
+
+        #영향받은 레코드 개수 반환
+        return self.cursor.rowcount
 
 
