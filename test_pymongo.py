@@ -1,6 +1,6 @@
 #pip install pymongo - terminal에서
 #1.접속, 2.database연결, 3.컬렉션 연결, 4.메서드를 이용, 문서 조작
-#실제 코드를 이용하여, 검색, 삭제, 업데이트를 수행
+#실제 코드를 이용하여 데이터를 추가, 검색, 삭제, 업데이트를 수행
 
 from pymongo import MongoClient
 
